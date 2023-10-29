@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramzz Fast Food</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: navy;
+            color: white;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 20px;
+            font-weight: bold;
+        }
+
+        .section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .section-about {
+            background-color: white;
+            color: navy;
+            display: block;
+        }
+
+        .section-menu,
+        .section-contact {
+            display: none;
+        }
+
+        .menu-link-blink {
+            animation: blink 1s infinite;
+        }
+
+        .separator {
+            height: 2px;
+            background-color: white;
+            margin: 30px 0;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#menu" class="menu-link-blink">Menu and Pricing</a>
+            <a href="#contact">Address and Contact</a>
+        </nav>
+    </header>
+
+    <div id="about" class="section section-about">
+        <h2>About Ramzz Fast Food</h2>
+        <p>Fast Food by Ramzz is your go-to destination for delicious and freshly prepared fast food items. We take pride in serving high-quality meals with a touch of love. Our chefs carefully craft each dish, ensuring a delightful experience for our customers.</p>
+        <p>At Ramzz Fast Food, we believe in using the finest ingredients to create mouthwatering burgers, pizzas, fries, milkshakes, sandwiches, and more. Whether you're craving a classic burger or a flavorful pizza, we have something for everyone.</p>
+        <p>Visit us today and indulge in the delightful flavors of our fast food creations. Your satisfaction is our priority, and we are committed to providing you with a memorable dining experience.</p>
+        <div class="separator"></div>
+    </div>
+
+    <div id="menu" class="section section-menu">
+        <h2>Menu and Pricing</h2>
+        <ul>
+            <li>Burger - ₹35</li>
+            <li>Pizza - ₹45</li>
+            <li>French Fries - ₹25</li>
+            <li>Milkshake - ₹30</li>
+            <li>Sandwich - ₹35</li>
+            <li>Noodles - ₹35</li>
+            <li>Samosa - ₹20</li>
+            <li>Vada Pav - ₹20</li>
+            <li>Idli - ₹35</li>
+            <li>Dosa - ₹35</li>
+        </ul>
+        <div class="separator"></div>
+    </div>
+
+    <div id="contact" class="section section-contact">
+        <h2>Contact Details</h2>
+        <p>Address: JAVA Canteen near Clock Tower, SRM Kattankulattur, 60205</p>
+        <p>Contact No: 9976390557</p>
+        <p>Owner: Ramsundar</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector("nav").addEventListener("click", function (e) {
+                if (e.target.tagName === "A") {
+                    document.querySelectorAll(".section").forEach(function (section) {
+                        section.style.display = "none";
+                    });
+                    var targetId = e.target.getAttribute("href").substring(1);
+                    document.getElementById(targetId).style.display = "block";
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
